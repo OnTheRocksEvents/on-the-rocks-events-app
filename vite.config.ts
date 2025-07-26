@@ -1,29 +1,37 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [react()],
-  base: '/', // Servir assets desde raíz
 
   build: {
-    outDir: 'dist',                // Carpeta estándar producción
-    sourcemap: false,              // Mejor seguridad en prod desactivando sourcemaps
-    target: 'esnext',              // Compatibilidad con navegadores modernos
-    minify: 'esbuild',             // Minificación rápida por defecto
-    chunkSizeWarningLimit: 500,    // Aviso para chunks grandes (KB)
+    outDir: 'dist',
+    sourcemap: false,          // Evitar exposición de código fuente en producción
+    target: 'esnext',          // Para browsers modernos, reduce tamaño de bundle
+    minify: 'esbuild',         // Minificador rápido y eficiente
+    chunkSizeWarningLimit: 500,
+    cssCodeSplit: true,        // Optimiza separación CSS por componente
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) return 'vendor'; // Separar vendor bundle
+        }
+      }
+    }
   },
 
   server: {
-    port: 3000,                   // Puerto desarrollo local
-    open: true,                   // Abrir navegador automáticamente
-    strictPort: true,             // Error si puerto 3000 ocupado, para evitar abrir otro
+    port: 3000,
+    open: true,
+    strictPort: true,          // Error si puerto ocupado, evita abrir otro aleatorio
+    cors: true,               // Para desarrollo con APIs externas sin problemas
   },
 
   resolve: {
     alias: {
-      '@': '/src',                // Alias limpio para importar desde src
+      '@': '/src',
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'], // Opcional, mejora importaciones
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
   },
 });
