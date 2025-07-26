@@ -1,21 +1,15 @@
-// src/main.tsx
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './App.css'; // Cambia a './styles/global.css' si prefieres centralizar estilos
 
-// Estilos globales
-import './App.css'; // Puedes cambiar por './styles/global.css' si prefieres centralizarlo
+const root = document.getElementById('root');
 
-// Punto de montaje
-const rootElement = document.getElementById('root');
-
-if (!rootElement) {
-  throw new Error('❌ No se encontró el elemento raíz con id="root" en index.html');
+if (!root) {
+  throw new Error('❌ Elemento raíz con id="root" no encontrado en index.html');
 }
 
-// Render de la App
-ReactDOM.createRoot(rootElement).render(
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
