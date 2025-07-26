@@ -1,0 +1,18 @@
+:root {
+  --bg-start: #1e3c72;
+  --bg-end: #2a5298;
+  --text-color: #fff;
+  --glass-bg: rgba(255 255 255 / 0.15);
+}
+
+[data-theme="dark"] {
+  --bg-start: #000;
+  --bg-end: #333;
+  --text-color: #fff;
+  --glass-bg: rgba(20 20 20 / 0.35);
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  color: var(--text-color);
+}
