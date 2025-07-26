@@ -1,3 +1,15 @@
+/* Variables para colores y sombras */
+:root {
+  --primary-gradient-start: #1e3c72;
+  --primary-gradient-end: #2a5298;
+  --glass-bg: rgba(255 255 255 / 0.15);
+  --glass-shadow: rgba(0 0 0 / 0.1);
+  --btn-bg: rgba(255 255 255 / 0.25);
+  --btn-bg-hover: rgba(255 255 255 / 0.4);
+  --btn-disabled-opacity: 0.4;
+  --text-color: #fff;
+}
+
 /* Container principal con fondo degradado y tipografía definida */
 .app-bg {
   min-height: 100vh;
@@ -5,9 +17,9 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  color: #fff;
+  color: var(--text-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
 }
 
 /* Título principal centrado y destacado */
@@ -17,6 +29,7 @@
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
+  user-select: none;
 }
 
 /* Contenedor con efecto glassmorphism */
@@ -25,14 +38,14 @@
   max-width: 900px;
   padding: 2rem;
   border-radius: 20px;
-  background: rgba(255 255 255 / 0.15);
+  background: var(--glass-bg);
   backdrop-filter: blur(15px);
-  box-shadow: 0 4px 30px rgba(0 0 0 / 0.1);
+  box-shadow: 0 4px 30px var(--glass-shadow);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* Performance hint */
   will-change: backdrop-filter;
+  transition: background 0.3s ease;
 }
 
 /* Footer con estilo ligero y centrado */
@@ -41,6 +54,7 @@
   font-size: 1rem;
   opacity: 0.7;
   text-align: center;
+  user-select: none;
 }
 
 /* Texto para estados de carga, en cursiva y con opacidad */
@@ -48,5 +62,38 @@
   font-style: italic;
   opacity: 0.8;
   text-align: center;
+  user-select: none;
 }
 
+/* Paginación: controles centrados, botones estilizados */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-controls button {
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.pagination-controls button:disabled {
+  opacity: var(--btn-disabled-opacity);
+  cursor: not-allowed;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: var(--btn-bg-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--btn-bg-hover);
+}
