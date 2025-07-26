@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Mojito",
+    "ingredients": ["Ron", "Hierbabuena", "Azúcar", "Lima", "Soda"]
+  },
+  {
+    "name": "Caipirinha",
+    "ingredients": ["Cachaça", "Azúcar", "Lima"]
+  },
+  {
+    "name": "Piña Colada",
+    "ingredients": ["Ron", "Piña", "Coco"]
+  }
+]
