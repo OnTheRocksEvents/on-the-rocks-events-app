@@ -2,22 +2,26 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/',
+  base: '/', // Ruta base para tu SPA en Vercel
+
   plugins: [react()],
 
   build: {
-    outDir: 'dist',
-    sourcemap: false,              // Evita exponer código fuente en producción
-    target: 'esnext',              // Browser modernos, bundle más pequeño
-    minify: 'esbuild',             // Minificador rápido y eficiente
-    chunkSizeWarningLimit: 500,    // Alerta si algún chunk > 500 KB
-    cssCodeSplit: true,            // Optimiza CSS por componente
+    outDir: 'dist',              // Carpeta de salida que Vercel espera
+    sourcemap: false,            // No generar mapas para proteger código fuente
+    target: 'esnext',            // Código moderno para browsers actuales
+    minify: 'esbuild',           // Minificador rápido y eficiente
+    chunkSizeWarningLimit: 500,  // Aviso si algún chunk es > 500 KB
+    cssCodeSplit: true,          // Separar CSS para cada componente, mejora carga
+
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) return 'vendor'; // Bundle separado para dependencias externas
+          if (id.includes('node_modules')) {
+            return 'vendor'; // Separar dependencias en bundle vendor.js
+          }
         },
-        // Mantener nombres de chunks legibles para debugging y cache busting óptimo
+        // Nombres con hash para mejor cache busting
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: 'assets/[name].[hash].[ext]'
@@ -27,23 +31,22 @@ export default defineConfig({
 
   server: {
     port: 3000,
-    open: true,                   // Auto abrir navegador al iniciar dev server
-    strictPort: true,             // Error si puerto ocupado, para evitar usar otro
-    cors: true,                  // Habilita CORS para facilitar desarrollo con APIs externas
+    open: true,            // Abrir navegador automáticamente en dev
+    strictPort: true,      // Fallar si el puerto está ocupado (evita confusión)
+    cors: true,            // Permite peticiones cruzadas (útil en desarrollo)
     fs: {
-      strict: true,              // Permite servir solo archivos dentro del proyecto para seguridad
+      strict: true,        // Solo servir archivos dentro del proyecto (seguridad)
     }
   },
 
   resolve: {
     alias: {
-      '@': '/src',               // Alias para importaciones limpias
+      '@': '/src',          // Alias para importar carpetas con '@'
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],  // Facilita resolver estas extensiones
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'], // Extensiones reconocidas al importar
   },
 
   optimizeDeps: {
-    // Para acelerar arranque preconstruyendo estas dependencias
-    include: ['react', 'react-dom']
+    include: ['react', 'react-dom'], // Preconstruir para acelerar arranque dev
   }
 });
