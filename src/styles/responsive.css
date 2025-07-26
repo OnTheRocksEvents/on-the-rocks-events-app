@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+  .glass-container {
+    padding: 1rem;
+    width: 98vw;
+    min-height: 80vh;
+  }
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
