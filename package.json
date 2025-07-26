@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",                        // Servidor de desarrollo rápido y con hot reload
-    "build": "vite build --clean",       // Build limpio para producción
-    "preview": "vite preview --port 5000", // Vista previa local del build, puerto fijo para evitar conflictos
-    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --fix", // Linter automático para código limpio
-    "format": "prettier --write 'src/**/*.{js,ts,jsx,tsx,json,css,md}'" // Formateo automático para mantener estilo consistente
+    "dev": "vite",
+    "build": "vite build --clean",
+    "preview": "vite preview --port 5000",
+    "lint": "eslint 'src/**/*.{js,ts,jsx,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{js,ts,jsx,tsx,json,css,md}'"
   },
   "dependencies": {
     "react": "^18.2.0",
