@@ -1,36 +1,38 @@
-# On The Rocks Events App
+On The Rocks Events App
 
-Aplicación web para la gestión integral de fichajes de empleados, organización y planificación de eventos. Cuenta con paneles para empleados, clientes y administración, además de informes detallados post-evento para análisis y seguimiento.
+Aplicación web para la gestión integral de fichajes de empleados, organización y planificación de eventos. Cuenta con paneles específicos para empleados, clientes y administradores, además de informes detallados post-evento para análisis y seguimiento.
 
----
+Características principales
 
-## Características
+Control y gestión de fichajes con geolocalización y margen de 200 metros.
+Paneles diferenciados para empleados, clientes y administradores.
+Seguimiento y análisis estadístico detallado de eventos finalizados.
+Integración de agentes IA para análisis comercial, innovación, automatización, RRHH y logística.
+Diseño moderno, responsivo y seguro con efecto Glassmorphism.
+Preparada para despliegue rápido y sencillo en plataformas como Vercel.
+Tecnologías utilizadas
 
-- Gestión y control de fichajes con geolocalización y margen de 200 metros.
-- Paneles diferenciados para empleados, clientes y administradores.
-- Seguimiento y análisis estadístico de eventos finalizados.
-- Sistema de agentes IA integrados para análisis comercial, innovación, automatización, RRHH y logística.
-- Diseño moderno, responsivo y seguro con Glassmorphism y tecnologías punteras (React + Vite).
-- Preparada para despliegue en plataformas como Vercel.
+React 18
+Vite (bundler y servidor de desarrollo)
+TypeScript (opcional, según necesidad)
+CSS moderno con Glassmorphism
+Node.js para backend (planificado para futuras integraciones)
+GitHub para control de versiones
+Vercel para despliegue
+Instalación y ejecución
 
----
-
-## Tecnologías
-
-- React 18
-- Vite como bundler y servidor de desarrollo
-- TypeScript (si aplica)
-- CSS moderno con Glassmorphism
-- Node.js para backend (en caso de integración futura)
-- GitHub para control de versiones
-- Vercel para despliegue
-
----
-
-## Instalación
-
-1. Clona el repositorio:
-
-```bash
+bash
+Copiar
+Editar
+# Clonar el repositorio
 git clone https://github.com/OnTheRocksEvents/on-the-rocks-events-app.git
+
+# Entrar en el directorio del proyecto
 cd on-the-rocks-events-app
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+El proyecto estará disponible en http://localhost:3000 por defecto.
