@@ -8,10 +8,8 @@ import Chatbot from "./components/chatbot/Chatbot";
 import TutorialPlayer from "./components/video/TutorialPlayer";
 import LanguageSwitcher from "./components/common/LanguageSwitcher";
 
-// Tipos para roles
 type Role = "employee" | "client" | "admin" | null;
 
-// Datos simulados para cada rol
 const MOCK_DATA = {
   employee: {
     name: "Enrique",
@@ -33,26 +31,30 @@ const MOCK_DATA = {
     activeEvents: 8,
     systemHealth: "Óptimo",
   },
-};
+} as const;
 
 const App: React.FC = () => {
-  const [role, setRole] = useState<Role>(null);
-  const [userData, setUserData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
+  const [role, setRole] = useState<Role>(null);
+  const [userData, setUserData] = useState<typeof MOCK_DATA[keyof typeof MOCK_DATA] | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!role) return;
+    if (!role) {
+      setUserData(null);
+      setLoading(false);
+      return;
+    }
 
     setLoading(true);
-    setUserData(null); // limpiar datos anteriores
+    setUserData(null);
 
     const timer = setTimeout(() => {
       setUserData(MOCK_DATA[role]);
       setLoading(false);
     }, 700);
 
-    return () => clearTimeout(timer); // limpieza
+    return () => clearTimeout(timer);
   }, [role]);
 
   const renderPanel = () => {
@@ -71,25 +73,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app-bg">
+    <div className="app-bg" role="main" aria-label="On The Rocks Events Application">
       <h1 className="app-title">{t("onTheRocksEvents")}</h1>
 
-      <div className="glass-container">
-        <LanguageSwitcher />
+      <section className="glass-container" aria-live="polite" aria-busy={loading}>
+        <LanguageSwitc
 
-        {!role && <Login setRole={setRole} />}
-
-        {loading && <p className="loading-text">{t("loading")}</p>}
-
-        {!loading && renderPanel()}
-
-        <TutorialPlayer />
-        <Chatbot />
-      </div>
-
-      <footer className="footer">{t("footer")}</footer>
-    </div>
-  );
-};
-
-export default App;
