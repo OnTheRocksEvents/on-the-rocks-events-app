@@ -1,0 +1,39 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Vite cache
+/.vite/
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Optional: lock files si quieres ignorar
+# package-lock.json
+# yarn.lock
+
+# Testing coverage reports
+/coverage/
+
+# Storybook build output
+/storybook-static/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
