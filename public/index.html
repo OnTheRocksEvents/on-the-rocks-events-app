@@ -2,20 +2,35 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1f1f2e" />
     <meta name="description" content="On The Rocks Events App - Gestión avanzada de eventos, empleados y planificación para empresas." />
     <meta property="og:title" content="On The Rocks Events" />
     <meta property="og:description" content="Gestión inteligente de eventos y personal con paneles, IA y análisis post-evento." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon-96x96.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="On The Rocks Events" />
+    <meta name="twitter:description" content="Gestión inteligente de eventos y personal con paneles, IA y análisis post-evento." />
+    <meta name="twitter:image" content="/favicon-96x96.png" />
+
     <title>On The Rocks Events</title>
 
-    <!-- Preloads y fuentes modernas -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="OnTheRocksEvents" />
+
+    <!-- Preloads y fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
 
-    <!-- Estilo mínimo de fallback -->
+    <!-- Estilo fallback mínimo -->
     <style>
       html, body {
         margin: 0;
@@ -27,11 +42,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+      #root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    </style
