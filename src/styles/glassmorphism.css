@@ -1,0 +1,72 @@
+body {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.app-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.app-title {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: #222;
+  letter-spacing: 2px;
+}
+.glass-container {
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 2rem;
+  margin: 2rem 0;
+  width: 90vw;
+  max-width: 700px;
+  min-height: 60vh;
+}
+.glass-card {
+  background: rgba(255,255,255,0.4);
+  border-radius: 16px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 16px rgba(31,38,135,0.13);
+}
+.login-panel button, .lang-switcher button {
+  margin: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #a1c4fd;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login-panel button:hover, .lang-switcher button:hover {
+  background: #c2e9fb;
+}
+.footer {
+  margin-top: auto;
+  padding: 1rem;
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+}
+.chatbot {
+  margin-top: 2rem;
+}
+.chat-history {
+  min-height: 60px;
+  max-height: 120px;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
