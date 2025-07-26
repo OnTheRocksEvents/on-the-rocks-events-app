@@ -1,0 +1,23 @@
+{
+  "onTheRocksEvents": "On The Rocks Events",
+  "selectRole": "Selecciona tu rol",
+  "employee": "Empleado",
+  "client": "Cliente",
+  "admin": "Administrador",
+  "employeePanel": "Panel de Empleado",
+  "clientPanel": "Panel de Cliente",
+  "adminPanel": "Panel de Administrador",
+  "academy": "Academia de Cócteles",
+  "searchCocktail": "Buscar cóctel...",
+  "checkIn": "Check-in de empleado",
+  "checkInNow": "Hacer check-in",
+  "checkInSuccess": "¡Check-in realizado con éxito!",
+  "checkInTooFar": "Estás demasiado lejos del evento",
+  "geolocationNotSupported": "Geolocalización no soportada",
+  "geolocationError": "No se pudo obtener tu ubicación",
+  "chatbot": "Chat con agente",
+  "askAgent": "Pregunta algo al agente...",
+  "send": "Enviar",
+  "tutorial": "Tutorial en vídeo",
+  "videoNotSupported": "Tu navegador no soporta video."
+}
